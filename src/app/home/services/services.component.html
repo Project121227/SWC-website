@@ -1,0 +1,19 @@
+<section id="services" class="services section-padding">
+  <div class="container" appFadeUp>
+    <div class="section-header">
+      <h2 class="title font-display text-gold">Our Healing Arts</h2>
+      <div class="divider"></div>
+      <p class="subtitle">Comprehensive osteopathic therapies designed to help you regain balance, mobility, and vitality.</p>
+    </div>
+
+    <div class="services-grid stagger-container">
+      @for (service of services; track service.title) {
+        <div class="service-card fade-up-child">
+          <div class="card-icon" [innerHTML]="service.safeIcon"></div>
+          <h3 class="card-title">{{ service.title }}</h3>
+          <p class="card-desc">{{ service.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

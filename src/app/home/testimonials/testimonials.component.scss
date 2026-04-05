@@ -1,0 +1,87 @@
+.testimonials {
+  background-color: var(--color-parchment);
+  color: var(--color-dark);
+  overflow: hidden;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 4rem;
+}
+
+.carousel-container {
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0 2rem;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  padding: 0 1rem;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quote-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.quote-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 3rem;
+  color: var(--color-charcoal);
+}
+
+.patient-info {
+  .name {
+    font-size: 1.1rem;
+    color: var(--color-charcoal);
+    margin-bottom: 0.25rem;
+  }
+  .location {
+    font-size: 0.85rem;
+    color: var(--color-sage);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(45, 41, 38, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    padding: 0;
+
+    &.active {
+      background: var(--color-gold);
+      transform: scale(1.3);
+    }
+  }
+}

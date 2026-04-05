@@ -25,7 +25,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -63,6 +63,11 @@
               "buildTarget": "project1:build:development"
             }
           },
+          "options": {
+            "allowedHosts": [
+              "all"
+            ]
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
@@ -84,7 +89,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }

@@ -1,0 +1,16 @@
+<section id="gallery" class="gallery section-padding">
+  <div class="container">
+    <h2 class="title font-display text-gold text-center mb-4" appFadeUp>Our Sanctuary</h2>
+    
+    <div class="gallery-scroll" appFadeUp>
+      <div class="scroll-track">
+        @for (image of images; track image.url) {
+          <div class="gallery-item">
+            <img [src]="image.url" [alt]="image.alt" loading="lazy" class="gallery-image">
+            <div class="overlay"></div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

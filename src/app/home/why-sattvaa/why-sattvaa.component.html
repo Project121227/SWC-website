@@ -1,0 +1,25 @@
+<section id="why-us" class="why-us section-padding">
+  <div class="watermark">SATTVAA</div>
+  
+  <div class="container layout-grid">
+    <div class="content stagger-container" appFadeUp>
+      <h2 class="title font-display text-gold fade-up-child">Why Choose Sattvaa wellness center?</h2>
+      <p class="subtitle fade-up-child">Experience osteopathy that treats the person, not just the symptom.</p>
+      
+      <div class="reasons-list">
+        @for (reason of reasons; track reason.title) {
+          <div class="reason-item fade-up-child">
+            <div class="icon-wrap" [innerHTML]="reason.safeIcon"></div>
+            <h4 class="reason-title">{{ reason.title }}</h4>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="image-col" appFadeUp>
+      <div class="img-wrapper">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800" alt="Osteopathy Hands-On Therapy" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>

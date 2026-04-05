@@ -1,0 +1,20 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.app-main {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: clamp(60px, 10vh, 80px); /* Responsive top padding for navbar */
+  background-color: var(--color-dark);
+}
+
+/* Ensure grain overlay is positioned correctly */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}

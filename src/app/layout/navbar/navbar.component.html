@@ -1,0 +1,40 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="nav-container container">
+    
+    <div class="brand" (click)="scrollToSection('hero')">
+      <h1 class="logo">Sattvaa wellness center</h1>
+      <span class="tagline">touching the roots</span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="desk-menu">
+      <a (click)="scrollToSection('hero')">Home</a>
+      <a (click)="scrollToSection('about')">About</a>
+      <a (click)="scrollToSection('services')">Services</a>
+      <a (click)="scrollToSection('why-us')">Why Us</a>
+      <a (click)="scrollToSection('testimonials')">Testimonials</a>
+      <a (click)="scrollToSection('contact')">Contact</a>
+      <a class="btn-primary" (click)="scrollToSection('contact')">Book a Session</a>
+    </div>
+
+    <!-- Mobile Hamburger Toggle -->
+    <button class="hamburger" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen" aria-label="Toggle menu">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </button>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" [class.open]="isMobileMenuOpen">
+    <div class="mobile-links">
+      <a (click)="scrollToSection('hero')">Home</a>
+      <a (click)="scrollToSection('about')">About</a>
+      <a (click)="scrollToSection('services')">Services</a>
+      <a (click)="scrollToSection('why-us')">Why Us</a>
+      <a (click)="scrollToSection('testimonials')">Testimonials</a>
+      <a (click)="scrollToSection('contact')">Contact</a>
+      <a class="btn-primary mobile-btn" (click)="scrollToSection('contact')">Book a Session</a>
+    </div>
+  </div>
+</nav>

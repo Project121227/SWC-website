@@ -1,0 +1,37 @@
+<section id="testimonials" class="testimonials section-padding">
+  <div class="container text-center">
+    <h2 class="title font-display text-gold">Stories of Healing</h2>
+    
+    <div class="carousel-container" (mouseenter)="stopAutoScroll()" (mouseleave)="startAutoScroll()">
+      <div class="carousel-track" [style.transform]="'translateX(' + (-currentIndex * 100) + '%)'">
+        
+        @for (item of testimonials; track item.name) {
+          <div class="carousel-slide">
+            <div class="testimonial-card">
+              <svg class="quote-icon" fill="var(--color-gold)" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+              
+              <p class="quote-text">"{{ item.quote }}"</p>
+              
+              <div class="patient-info">
+                <h4 class="name font-accent">{{ item.name }}</h4>
+                <span class="location">{{ item.location }}</span>
+              </div>
+            </div>
+          </div>
+        }
+
+      </div>
+    </div>
+
+    <div class="carousel-dots">
+      @for (item of testimonials; track $index) {
+        <button class="dot" 
+                [class.active]="currentIndex === $index"
+                (click)="setSlide($index)"
+                aria-label="Go to slide"></button>
+      }
+    </div>
+  </div>
+</section>

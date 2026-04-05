@@ -1,0 +1,85 @@
+.services {
+  background-color: var(--color-parchment);
+  color: var(--color-dark);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-inline: auto;
+  padding: 0 1.5rem;
+
+  .title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background-color: var(--color-gold);
+    margin: 0 auto 1.5rem;
+  }
+
+  .subtitle {
+    color: var(--color-charcoal);
+    opacity: 0.8;
+  }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service-card {
+  background-color: var(--color-dark);
+  padding: 2.5rem 1.75rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  color: var(--color-text-light);
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--color-sage);
+    margin-bottom: 2rem;
+
+    ::ng-deep svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-light);
+  }
+
+  .card-desc {
+    opacity: 0.8;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-gold);
+    box-shadow: 0 10px 30px rgba(201, 169, 110, 0.15);
+    
+    .card-icon {
+      color: var(--color-gold);
+    }
+  }
+}
