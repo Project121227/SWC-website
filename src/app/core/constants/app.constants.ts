@@ -12,7 +12,7 @@ export const EMAILJS_TEMPLATE_ID = 'dGVtcGxhdGVfZmF3eW56ag==';
 
 // Email Configuration
 export const EMAIL_CONFIG = {
-  TO_NAME: 'Dr. Padarthi Divyasai',
+  TO_NAME: 'D.O. Padarthi Divyasai',
   TO_EMAIL: 'sattvaawellnesscenter@gmail.com',
   FROM_EMAIL: 'noreply@sattvaawellness.com',
 };
