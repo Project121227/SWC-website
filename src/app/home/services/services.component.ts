@@ -26,7 +26,7 @@ export class ServicesComponent {
     },
     {
       title: 'Craniosacral Therapy',
-      description: 'Gentle rhythm-based healing for the nervous system.',
+      description: 'Gentle rhythm-based treatment for the nervous system.',
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>'
     },
     {

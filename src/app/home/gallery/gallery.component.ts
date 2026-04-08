@@ -16,21 +16,9 @@ interface GalleryImage {
 })
 export class GalleryComponent {
   images: GalleryImage[] = [
-    {
-      url: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600',
-      alt: 'Clinic interior at Sattvaa wellness center'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600',
-      alt: 'Osteopathy therapy session'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600',
-      alt: 'Wellness space at Sattvaa wellness center'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=600',
-      alt: 'Therapeutic massage session'
-    }
+    { url: 'assets/sanctuary.1.jpeg', alt: 'Sattvaa Wellness Center sanctuary view 1' },
+    { url: 'assets/sanctuary.2.jpeg', alt: 'Sattvaa Wellness Center sanctuary view 2' },
+    { url: 'assets/sanctuary.3.jpeg', alt: 'Sattvaa Wellness Center sanctuary view 3' },
+    { url: 'assets/sanctuary.4.jpeg', alt: 'Sattvaa Wellness Center sanctuary view 4' }
   ];
 }
