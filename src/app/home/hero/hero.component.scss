@@ -1,13 +1,15 @@
 .hero {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 5.5rem);
-  padding-top: 5.5rem;
+  min-height: unset;
+  padding-top: 5rem;
   position: relative;
   background-color: var(--color-dark);
 
   @media (min-width: 992px) {
     flex-direction: row;
+    min-height: calc(100vh - 5.5rem);
+    padding-top: 5.5rem;
   }
 }
 
@@ -17,10 +19,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 4rem 1.5rem;
+  padding: 2.5rem 1.25rem 2rem;
   position: relative;
   z-index: 2;
-  min-height: 90vh;
+  min-height: unset;
 
   .content {
     width: 100%;
@@ -28,11 +30,11 @@
   }
 
   @media (max-width: 576px) {
-    padding: 3rem 1rem;
+    padding: 2rem 1rem 1.5rem;
   }
 
   @media (min-width: 768px) {
-    padding: 8rem 2rem;
+    padding: 6rem 2rem;
     min-height: 100vh;
   }
 
@@ -68,21 +70,21 @@
 .cta-group {
   width: 100%;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 4rem;
+  margin-bottom: 1.75rem;
 
   button {
-    min-width: 180px;
+    min-width: 160px;
     flex: 1 1 auto;
     font-size: 1rem;
   }
 }
 
 .subtext {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-size: clamp(1rem, 2vw, 1.4rem);
   opacity: 0.9;
-  margin-bottom: 3rem;
+  margin-bottom: 1.75rem;
   max-width: 480px;
 }
 
@@ -90,7 +92,7 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 
   button {
     font-size: 1rem;
@@ -122,11 +124,11 @@
 .hero-right {
   flex: 1;
   position: relative;
-  min-height: 55vh;
+  min-height: 52vw;
   overflow: hidden;
 
   @media (max-width: 576px) {
-    min-height: 45vh;
+    min-height: 56vw;
   }
 
   img {

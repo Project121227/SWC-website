@@ -5,26 +5,28 @@
 
 .section-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   max-width: 600px;
   margin-inline: auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
 
   .title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    margin-bottom: 1rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 0.75rem;
   }
 
   .divider {
     width: 60px;
     height: 1px;
     background-color: var(--color-gold);
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 1.25rem;
   }
 
   .subtitle {
     color: var(--color-charcoal);
     opacity: 0.8;
+    font-size: 0.95rem;
+    line-height: 1.65;
   }
 }
 
@@ -43,17 +45,17 @@
 
 .service-card {
   background-color: var(--color-dark);
-  padding: 2.5rem 1.75rem;
+  padding: 1.75rem 1.5rem;
   border-radius: 8px;
   border: 1px solid transparent;
   transition: all var(--transition-fast);
   color: var(--color-text-light);
 
   .card-icon {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     color: var(--color-sage);
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
 
     ::ng-deep svg {
       width: 100%;
@@ -62,19 +64,19 @@
   }
 
   .card-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
     color: var(--color-text-light);
   }
 
   .card-desc {
     opacity: 0.8;
     line-height: 1.6;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   &:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     border-color: var(--color-gold);
     box-shadow: 0 10px 30px rgba(201, 169, 110, 0.15);
     

@@ -22,47 +22,48 @@
 .layout-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4rem;
+  gap: 2.5rem;
   position: relative;
   z-index: 2;
 
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr;
+    gap: 5rem;
     align-items: center;
   }
 }
 
 .content {
   .title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    margin-bottom: 1rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 0.75rem;
   }
 
   .subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
     opacity: 0.8;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 }
 
 .reasons-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 
   .reason-item {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.25rem;
     background: rgba(255, 255, 255, 0.03);
-    padding: 1.5rem;
+    padding: 1.1rem 1.25rem;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition-fast);
 
     .icon-wrap {
-      flex: 0 0 48px;
-      height: 48px;
+      flex: 0 0 44px;
+      height: 44px;
       border-radius: 50%;
       background: rgba(201, 169, 110, 0.1);
       display: flex;
@@ -71,20 +72,20 @@
       color: var(--color-gold);
 
       ::ng-deep svg {
-        width: 28px;
-        height: 28px;
+        width: 24px;
+        height: 24px;
       }
     }
 
     .reason-title {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 500;
     }
 
     &:hover {
       background: rgba(255, 255, 255, 0.05);
       border-color: rgba(201, 169, 110, 0.3);
-      transform: translateX(10px);
+      transform: translateX(6px);
     }
   }
 }
