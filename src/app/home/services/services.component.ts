@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FadeUpDirective } from '../../shared/fade-up.directive';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-interface Service {
+interface Slide {
+  id: string;
+  label: string;       // short nav label
   title: string;
-  description: string;
-  icon: string;
-  safeIcon?: SafeHtml;
+  subtitle?: string;
+  content: SlideContent;
+}
+
+interface SlideContent {
+  type: 'intro' | 'conditions' | 'india' | 'andhra' | 'science' | 'goal' | 'philosophy';
 }
 
 @Component({
@@ -18,42 +22,49 @@ interface Service {
   styleUrl: './services.component.scss'
 })
 export class ServicesComponent {
-  services: Service[] = [
-    {
-      title: 'Structural Osteopathy',
-      description: 'Realign, restore, and recover your musculoskeletal harmony.',
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v16m-4-12l4-4 4 4m-8 8l4 4 4-4"/></svg>'
-    },
-    {
-      title: 'Craniosacral Therapy',
-      description: 'Gentle rhythm-based treatment for the nervous system.',
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>'
-    },
-    {
-      title: 'Visceral Manipulation',
-      description: 'Addressing organ mobility for whole-body wellness.',
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>'
-    },
-    {
-      title: 'Myofascial Release',
-      description: 'Releasing deep connective tissue tension.',
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1.2M6 7l2 1.2M22 12l-2 1.2M4 12l2 1.2M20 17l-2-1.2M6 17l2-1.2M12 22l-2-1.2m4 0L12 22"/></svg>'
-    },
-    {
-      title: 'Postural Correction',
-      description: 'Science-backed alignment for lasting posture health.',
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19V6.207a1 1 0 011.609-.793l2.782 2.086c.394.296.609.76.609 1.24v10.26"/></svg>'
-    },
-    {
-      title: 'Wellness Consultation',
-      description: 'Personalized lifestyle and body assessment sessions.',
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>'
-    }
+  currentIndex = 0;
+  autoTimer: any;
+
+  slides: Slide[] = [
+    { id: 'what',       label: 'What is Osteopathy?', title: 'What is Osteopathy?',                content: { type: 'intro' } },
+    { id: 'conditions', label: 'Conditions',           title: 'Conditions We Treat',               content: { type: 'conditions' } },
+    { id: 'india',      label: 'In India',             title: 'Osteopathy in India',               content: { type: 'india' } },
+    { id: 'andhra',     label: 'Our Presence',         title: 'Our Presence in Andhra Pradesh',    content: { type: 'andhra' } },
+    { id: 'science',    label: 'Science',              title: 'Scientific Foundation',             content: { type: 'science' } },
+    { id: 'goal',       label: 'Goal',                 title: 'Goal of an Osteopath',              content: { type: 'goal' } },
+    { id: 'philosophy', label: 'Philosophy',           title: 'Our Philosophy',                    content: { type: 'philosophy' } },
   ];
 
-  constructor(private sanitizer: DomSanitizer) {
-    this.services.forEach(s => {
-      s.safeIcon = this.sanitizer.bypassSecurityTrustHtml(s.icon);
-    });
+  musculoskeletal = [
+    'Back pain', 'Neck pain', 'Shoulder pain',
+    'Joint stiffness and arthritis', 'Muscle strains and sprains', 'Postural imbalances'
+  ];
+  visceral = [
+    'Digestive issues (acidity, bloating, constipation)',
+    'Diabetes (supportive care)', 'Thyroid imbalances (supportive care)',
+    'Respiratory restrictions', 'Menstrual and hormonal imbalances'
+  ];
+  cranial = [
+    'Headaches and migraines', 'Vertigo and dizziness',
+    'Stress-related disorders', 'Sleep disturbances', 'Nervous system imbalances'
+  ];
+
+  goalPoints = [
+    'Identify and treat the root cause of dysfunction',
+    'Improve mobility of joints, tissues, and organs',
+    'Enhance circulation and nerve function',
+    'Support the body\'s inherent self-healing mechanisms'
+  ];
+
+  goTo(i: number) {
+    this.currentIndex = i;
+  }
+
+  prev() {
+    this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+  }
+
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.slides.length;
   }
 }

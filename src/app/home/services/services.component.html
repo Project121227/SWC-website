@@ -1,19 +1,171 @@
 <section id="services" class="services section-padding">
-  <div class="container" appFadeUp>
-    <div class="section-header">
-      <h2 class="title font-display text-gold">Osteopathy</h2>
+  <div class="container">
+
+    <div class="section-heading" appFadeUp>
+      <h2 class="section-title font-display text-gold">Osteopathy</h2>
       <div class="divider"></div>
-      <p class="subtitle">Osteopathy is a holistic approach to healthcare that focuses on the musculoskeletal system and its relationship to other body systems. It uses manual techniques to diagnose, treat, and prevent illness or injury, promoting natural treatment and overall well-being.</p>
     </div>
 
-    <div class="services-grid stagger-container">
-      @for (service of services; track service.title) {
-        <div class="service-card fade-up-child">
-          <div class="card-icon" [innerHTML]="service.safeIcon"></div>
-          <h3 class="card-title">{{ service.title }}</h3>
-          <p class="card-desc">{{ service.description }}</p>
+    <!-- Slider -->
+    <div class="slider" appFadeUp>
+
+      <!-- Nav tabs (scrollable on mobile) -->
+      <div class="slider-nav">
+        @for (slide of slides; track slide.id; let i = $index) {
+          <button
+            class="nav-tab"
+            [class.active]="currentIndex === i"
+            (click)="goTo(i)">
+            {{ slide.label }}
+          </button>
+        }
+      </div>
+
+      <!-- Slide viewport -->
+      <div class="slide-viewport">
+        <div class="slide-track" [style.transform]="'translateX(' + (-currentIndex * 100) + '%)'">
+
+          <!-- SLIDE 0: What is Osteopathy -->
+          <div class="slide">
+            <h3 class="slide-title">What is Osteopathy?</h3>
+            <p class="slide-body">
+              Osteopathy is a hands-on, drug-free, and holistic approach to healthcare that views the body as a single, integrated unit rather than a collection of separate parts. It focuses on identifying and treating the <strong>root cause</strong> of pain and dysfunction, rather than just addressing symptoms.
+            </p>
+            <p class="slide-body">
+              This approach is <strong>patient-centred</strong> — meaning every treatment is tailored to the individual's unique condition, lifestyle, and needs.
+            </p>
+            <div class="slide-divider"></div>
+            <h4 class="slide-subtitle">Our Approach</h4>
+            <p class="slide-body">
+              Osteopathic treatment is gentle, precise, and scientifically based, using manual techniques to improve mobility, enhance circulation, and support the body's natural healing mechanisms.
+            </p>
+            <p class="slide-body">
+              By restoring balance within the body, osteopathy helps improve overall function and well-being.
+            </p>
+          </div>
+
+          <!-- SLIDE 1: Conditions -->
+          <div class="slide">
+            <h3 class="slide-title">Conditions We Treat</h3>
+            <p class="slide-body">Osteopathy can help manage a wide range of conditions by addressing the body as a whole:</p>
+
+            <div class="conditions-grid">
+              <div class="condition-group">
+                <h4 class="condition-heading">Musculoskeletal</h4>
+                <ul class="condition-list">
+                  @for (item of musculoskeletal; track item) {
+                    <li>{{ item }}</li>
+                  }
+                </ul>
+              </div>
+              <div class="condition-group">
+                <h4 class="condition-heading">Visceral (Organ-related)</h4>
+                <ul class="condition-list">
+                  @for (item of visceral; track item) {
+                    <li>{{ item }}</li>
+                  }
+                </ul>
+              </div>
+              <div class="condition-group">
+                <h4 class="condition-heading">Cranial &amp; Nervous System</h4>
+                <ul class="condition-list">
+                  @for (item of cranial; track item) {
+                    <li>{{ item }}</li>
+                  }
+                </ul>
+              </div>
+            </div>
+
+            <p class="slide-note">
+              Osteopathy supports the body's natural healing and is often used alongside conventional medical treatment when needed.
+            </p>
+          </div>
+
+          <!-- SLIDE 2: India -->
+          <div class="slide">
+            <h3 class="slide-title">Osteopathy in India</h3>
+            <p class="slide-body">
+              Osteopathy is a well-established system of healthcare globally and has been steadily gaining recognition in India over the past decade.
+            </p>
+            <p class="slide-body">
+              In India, its growth has been supported by initiatives inspired by <strong>Gurudev Sri Sri Ravi Shankar</strong>, founder of the <a class="slide-link" href="https://www.artofliving.org/in-en" target="_blank" rel="noopener noreferrer"><strong>Art of Living Foundation</strong></a>, with a vision to bring holistic and integrative healthcare approaches to the country.
+            </p>
+            <p class="slide-body">
+              One of the leading institutions offering formal education in osteopathy is <a class="slide-link" href="https://srisriuniversity.edu.in" target="_blank" rel="noopener noreferrer"><strong>Sri Sri University</strong></a>, located in Bhubaneswar. The university offers structured programs such as BSc, MSc, and Integrated MSc in Osteopathy, contributing to the development of professionally trained osteopaths in India.
+            </p>
+          </div>
+
+          <!-- SLIDE 3: Andhra Pradesh -->
+          <div class="slide">
+            <h3 class="slide-title">Our Presence in Andhra Pradesh</h3>
+            <p class="slide-body">
+              Osteopathy is still an emerging field in India, with limited availability of qualified practitioners.
+            </p>
+            <p class="slide-body">
+              At <strong>Sattvaa Wellness Center</strong>, we are proud to be among the early practitioners bringing osteopathy to Andhra Pradesh — offering authentic, patient-centered osteopathic care.
+            </p>
+            <p class="slide-body">
+              Our mission is to make this gentle, scientific, and holistic approach accessible to more people, helping them experience true healing beyond symptom-based treatment.
+            </p>
+          </div>
+
+          <!-- SLIDE 4: Science -->
+          <div class="slide">
+            <h3 class="slide-title">Scientific Foundation</h3>
+            <p class="slide-body">
+              Osteopathy is grounded in <strong>anatomy, physiology, and biomechanics</strong>, with growing scientific research supporting its effectiveness in improving pain, mobility, and overall quality of life.
+            </p>
+            <p class="slide-body">
+              It is recognized globally, including by the <strong>World Health Organization</strong>, which provides benchmarks and guidelines for osteopathic training and practice.
+            </p>
+          </div>
+
+          <!-- SLIDE 5: Goal -->
+          <div class="slide">
+            <h3 class="slide-title">Goal of an Osteopath</h3>
+            <p class="slide-body">
+              The goal of an osteopath is to restore balance within the body by improving structure and function — allowing the body to heal itself naturally.
+            </p>
+            <p class="slide-body">Rather than focusing only on symptoms, an osteopath aims to:</p>
+            <ul class="goal-list">
+              @for (point of goalPoints; track point) {
+                <li>{{ point }}</li>
+              }
+            </ul>
+            <p class="slide-body">
+              Ultimately, the goal is to help the patient achieve <strong>optimal health, movement, and long-term well-being</strong>.
+            </p>
+          </div>
+
+          <!-- SLIDE 6: Philosophy -->
+          <div class="slide">
+            <h3 class="slide-title">Our Philosophy</h3>
+            <p class="slide-body philosophy-quote">
+              "We don't just treat the pain — we treat the person."
+            </p>
+            <p class="slide-body">
+              By understanding the body as a connected system, osteopathy aims to restore harmony, allowing the body to heal naturally and function at its best.
+            </p>
+          </div>
+
         </div>
-      }
+      </div>
+
+      <!-- Prev / Next -->
+      <div class="slider-controls">
+        <button class="ctrl-btn" (click)="prev()" aria-label="Previous slide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="dots">
+          @for (slide of slides; track slide.id; let i = $index) {
+            <button class="dot" [class.active]="currentIndex === i" (click)="goTo(i)" [attr.aria-label]="'Go to ' + slide.label"></button>
+          }
+        </div>
+        <button class="ctrl-btn" (click)="next()" aria-label="Next slide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+
     </div>
   </div>
 </section>

@@ -4,7 +4,7 @@
     <!-- Heading: full width, centered above both columns -->
     <div class="contact-heading" appFadeUp>
       <h2 class="contact-title">Begin Your Journey</h2>
-      <p class="contact-subtitle">We'd love to hear from you. Reach out and start your journey today.</p>
+      <p class="contact-subtitle">We'd love to hear from you. Reach out and start your healing journey today.</p>
     </div>
 
     <!-- Two-column layout -->
@@ -20,6 +20,7 @@
               <a
                 [href]="info.type === 'phone' ? 'tel:' + info.value : info.type === 'email' ? 'mailto:' + info.value : '#'"
                 class="info-value"
+                [class.hours-value]="info.type === 'hours'"
                 [attr.target]="info.type === 'address' ? null : null">
                 {{ info.value }}
               </a>

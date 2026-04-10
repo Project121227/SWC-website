@@ -108,6 +108,10 @@
   &:hover {
     color: #c9a96e;
   }
+
+  &.hours-value {
+    white-space: pre-line;
+  }
 }
 
 // Map

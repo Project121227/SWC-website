@@ -11,7 +11,7 @@ import { FadeUpDirective } from '../../shared/fade-up.directive';
 })
 export class AboutComponent {
   stats = [
-    { label: 'Patients', target: 500, current: 0, suffix: '+' },
+    { label: 'Patients', target: 2000, current: 0, suffix: '+' },
     { label: 'Years Experience', target: 2, current: 0, suffix: '+' },
     { label: 'Holistic Approach', target: 100, current: 0, suffix: '%' }
   ];
