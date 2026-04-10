@@ -19,11 +19,6 @@ export const EMAIL_CONFIG = {
 
 // Services offered
 export const SERVICES = [
-  'Structural Osteopathy',
-  'Craniosacral Therapy',
-  'Visceral Manipulation',
-  'Myofascial Release',
-  'Postural Correction',
-  'Wellness Consultation',
-  'N/A - Not Known',
+  'Osteopathy',
+  'Sujok',
 ];
