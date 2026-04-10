@@ -16,10 +16,10 @@ interface GalleryImage {
 })
 export class GalleryComponent {
   images: GalleryImage[] = [
-    { url: 'assets/sanctuary.1.jpeg', alt: 'Sattvaa Wellness Center — our space, view 1' },
-    { url: 'assets/sanctuary.2.jpeg', alt: 'Sattvaa Wellness Center — our space, view 2' },
     { url: 'assets/sanctuary.3.jpeg', alt: 'Sattvaa Wellness Center — our space, view 3' },
     { url: 'assets/sanctuary.4.jpeg', alt: 'Sattvaa Wellness Center — our space, view 4' },
-    { url: 'assets/sanctuary.5.jpeg', alt: 'Sattvaa Wellness Center — our space, view 5' }
+    { url: 'assets/sanctuary.5.jpeg', alt: 'Sattvaa Wellness Center — our space, view 5' },
+    { url: 'assets/sanctuary.1.jpeg', alt: 'Sattvaa Wellness Center — our space, view 1' },
+    { url: 'assets/sanctuary.2.jpeg', alt: 'Sattvaa Wellness Center — our space, view 2' }
   ];
 }

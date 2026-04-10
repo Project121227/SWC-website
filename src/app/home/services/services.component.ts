@@ -26,7 +26,7 @@ export class ServicesComponent {
   autoTimer: any;
 
   slides: Slide[] = [
-    { id: 'what',       label: 'What is Osteopathy?', title: 'What is Osteopathy?',                content: { type: 'intro' } },
+    { id: 'what',       label: 'About Osteopathy', title: 'What is Osteopathy?',                content: { type: 'intro' } },
     { id: 'conditions', label: 'Conditions',           title: 'Conditions We Treat',               content: { type: 'conditions' } },
     { id: 'india',      label: 'In India',             title: 'Osteopathy in India',               content: { type: 'india' } },
     { id: 'andhra',     label: 'Our Presence',         title: 'Our Presence in Andhra Pradesh',    content: { type: 'andhra' } },
@@ -36,24 +36,33 @@ export class ServicesComponent {
   ];
 
   musculoskeletal = [
-    'Back pain', 'Neck pain', 'Shoulder pain',
-    'Joint stiffness and arthritis', 'Muscle strains and sprains', 'Postural imbalances'
+    'Back and Neck Pain',
+    'Postural Issues',
+    'Joint Stiffness',
+    'Arthritis',
+    'Muscle Strain and Muscle Sprain',
+    'Tennis and Golfer\'s Elbow'
   ];
   visceral = [
-    'Digestive issues (acidity, bloating, constipation)',
-    'Diabetes (supportive care)', 'Thyroid imbalances (supportive care)',
-    'Respiratory restrictions', 'Menstrual and hormonal imbalances'
+    'Liver Related Problems',
+    'Gastric Issues (Constipation, Bloating, Acidity, Gastric)',
+    'Breathing Issues',
+    'Menstrual Problems',
+    'Thyroid Problems'
   ];
   cranial = [
-    'Headaches and migraines', 'Vertigo and dizziness',
-    'Stress-related disorders', 'Sleep disturbances', 'Nervous system imbalances'
+    'Headache and Migraine',
+    'Sinusitis & Rhinitis',
+    'Vertigo & Dizziness',
+    'Sleep Related Issues',
+    'Anxiety and Overthinking'
   ];
 
   goalPoints = [
     'Identify and treat the root cause of dysfunction',
     'Improve mobility of joints, tissues, and organs',
     'Enhance circulation and nerve function',
-    'Support the body\'s inherent self-healing mechanisms'
+    'Support the body\'s inherent self-regulating mechanisms'
   ];
 
   goTo(i: number) {
